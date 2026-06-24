@@ -3,17 +3,17 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const ORG_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Matkassepriset\",\"url\":\"https://matkassepriset.vercel.app\",\"logo\":\"https://matkassepriset.vercel.app/favicon.ico\",\"description\":\"Oberoende jämförelsetjänst för svenska konsumenter inom matkasse.\",\"foundingDate\":\"2026\",\"inLanguage\":\"sv-SE\",\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"customer support\",\"url\":\"https://matkassepriset.vercel.app/kontakt\"}}";
-const WEB_PAGE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Bästa matkassar för sommaren 2026\",\"description\":\"Upptäck de bästa matkassarna ✓ Uppdaterad 2026 ✓ För en smidig och god sommar med varierade rätter.\",\"url\":\"https://matkassepriset.vercel.app\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"inLanguage\":\"sv-SE\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Matkassepriset\",\"url\":\"https://matkassepriset.vercel.app\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Hem\",\"item\":\"https://matkassepriset.vercel.app\"}]}}";
-const ITEM_LIST_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Bästa matkasse sommaren 2026 — Jämförelse 2026\",\"description\":\"Upptäck de bästa matkassarna för en smidig och god sommar.\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"Product\",\"name\":\"Linas Matkasse\",\"url\":\"https://www.linasmatkasse.se\",\"description\":\"Personligt anpassade matkassar för alla smaker\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"760\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"Product\",\"name\":\"Middagsfrid\",\"url\":\"https://www.middagsfrid.se\",\"description\":\"Ekologiska råvaror för hållbar matlagning\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"518\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"Product\",\"name\":\"HelloFresh\",\"url\":\"https://www.hellofresh.se\",\"description\":\"Internationella rätter med lokala ingredienser\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"404\"}}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@type\":\"Product\",\"name\":\"Simple Feast\",\"url\":\"https://www.simplefeast.com/se\",\"description\":\"Vegetariska och veganska rätter för alla\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.9\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"549\"}}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@type\":\"Product\",\"name\":\"MatHem Matkasse\",\"url\":\"https://www.mathem.se\",\"description\":\"Bekväma matkassar med hemleverans\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"129\"}}},{\"@type\":\"ListItem\",\"position\":6,\"item\":{\"@type\":\"Product\",\"name\":\"Årstiderna\",\"url\":\"https://www.arstiderna.com\",\"description\":\"Säsongsbetonade ekologiska matkassar\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"569\"}}},{\"@type\":\"ListItem\",\"position\":7,\"item\":{\"@type\":\"Product\",\"name\":\"City Gross Matkasse\",\"url\":\"https://www.citygross.se/matkasse\",\"description\":\"Prisvärda matkassar för hela familjen\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"524\"}}}]}";
-const ARTICLE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Bästa matkasse sommaren 2026\",\"description\":\"Upptäck de bästa matkassarna för en smidig och god sommar.\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"author\":{\"@type\":\"Organization\",\"name\":\"Matkassepriset\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Matkassepriset\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://matkassepriset.vercel.app\"}}";
-const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Vilken matkasse är bäst för barnfamiljer?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Linas Matkasse och City Gross Matkasse erbjuder familjevänliga alternativ med rätter som ofta uppskattas av barn. De har också flexibla prenumerationsplaner som kan anpassas efter familjens behov.\"}}]}";
+const WEB_PAGE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Bästa matkasse för sommaren 2026 - Jämförelse\",\"description\":\"Upptäck 2026:s bästa matkassar för sommaren ✓ Enkel guide ✓ Leverantörer: Linas, HelloFresh m.fl. ✓ Uppdaterad 2026\",\"url\":\"https://matkassepriset.vercel.app\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"inLanguage\":\"sv-SE\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Matkassepriset\",\"url\":\"https://matkassepriset.vercel.app\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Hem\",\"item\":\"https://matkassepriset.vercel.app\"}]}}";
+const ITEM_LIST_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Bästa matkasse för sommaren 2026 — Jämförelse 2026\",\"description\":\"Upptäck de bästa matkassarna för en enkel och god sommar.\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"Product\",\"name\":\"Linas Matkasse\",\"url\":\"https://www.linasmatkasse.se\",\"description\":\"Säsongsbetonade råvaror och flexibla menyer\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"760\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"Product\",\"name\":\"Middagsfrid\",\"url\":\"https://www.middagsfrid.se\",\"description\":\"Klimatsmarta måltider för hela familjen\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"518\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"Product\",\"name\":\"MatHem\",\"url\":\"https://www.mathem.se\",\"description\":\"Stort utbud och snabb leverans\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"672\"}}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@type\":\"Product\",\"name\":\"Simple Feast\",\"url\":\"https://www.simplefeast.com/se\",\"description\":\"Vegetariska och veganska menyer\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"549\"}}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@type\":\"Product\",\"name\":\"HelloFresh\",\"url\":\"https://www.hellofresh.se\",\"description\":\"Anpassningsbara menyer och fräscha råvaror\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"404\"}}},{\"@type\":\"ListItem\",\"position\":6,\"item\":{\"@type\":\"Product\",\"name\":\"Årstiderna\",\"url\":\"https://www.arstiderna.com\",\"description\":\"Ekologiska råvaror och säsongsbetonade rätter\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"569\"}}},{\"@type\":\"ListItem\",\"position\":7,\"item\":{\"@type\":\"Product\",\"name\":\"Matkomfort\",\"url\":\"https://www.matkomfort.se\",\"description\":\"Färdiglagade måltider för enkelhet\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"460\"}}}]}";
+const ARTICLE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Bästa matkasse för sommaren 2026\",\"description\":\"Upptäck de bästa matkassarna för en enkel och god sommar.\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"author\":{\"@type\":\"Organization\",\"name\":\"Matkassepriset\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Matkassepriset\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://matkassepriset.vercel.app\"}}";
+const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Vilken är den bästa matkassen för sommaren 2026?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Den bästa matkassen för sommaren 2026 beror på dina specifika behov och preferenser. Jämför olika leverantörer som Linas Matkasse och HelloFresh för att hitta den som passar dig bäst.\"}}]}";
 
 export async function getStaticProps() {
   var now = new Date();
   var year = now.getFullYear();
   var month = now.toLocaleDateString('sv-SE', { month: 'long' });
   var updated = now.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
-  var fallback = [{"name":"Linas Matkasse","url":"https://www.linasmatkasse.se","description":"Personligt anpassade matkassar för alla smaker","badge":"Bäst totalt","score":"4.8","price":"från 499 kr/mån","pros":["Brett urval","Hälsosamma alternativ","Flexibla leveranser"]},{"name":"Middagsfrid","url":"https://www.middagsfrid.se","description":"Ekologiska råvaror för hållbar matlagning","badge":null,"score":"4.7","price":"från 549 kr/mån","pros":["Ekologiskt fokus","Nya recept varje vecka","Miljövänlig förpackning"]},{"name":"HelloFresh","url":"https://www.hellofresh.se","description":"Internationella rätter med lokala ingredienser","badge":null,"score":"4.6","price":"från 489 kr/mån","pros":["Globalt inspirerade menyer","Enkla recept","Högkvalitativa råvaror"]},{"name":"Simple Feast","url":"https://www.simplefeast.com/se","description":"Vegetariska och veganska rätter för alla","badge":null,"score":"4.9","price":"från 599 kr/mån","pros":["100% växtbaserat","Klimatsmarta förpackningar","Snabb tillagning"]},{"name":"MatHem Matkasse","url":"https://www.mathem.se","description":"Bekväma matkassar med hemleverans","badge":null,"score":"4.5","price":"från 529 kr/mån","pros":["Leverans till dörren","Stort sortiment","Anpassningsbara menyer"]},{"name":"Årstiderna","url":"https://www.arstiderna.com","description":"Säsongsbetonade ekologiska matkassar","badge":null,"score":"4.8","price":"från 569 kr/mån","pros":["Säsongsanpassade råvaror","Ekologiska produkter","Inspirerande recept"]},{"name":"City Gross Matkasse","url":"https://www.citygross.se/matkasse","description":"Prisvärda matkassar för hela familjen","badge":null,"score":"4.6","price":"från 479 kr/mån","pros":["Familjevänliga alternativ","Bra priser","Stort urval"]}];
+  var fallback = [{"name":"Linas Matkasse","url":"https://www.linasmatkasse.se","description":"Säsongsbetonade råvaror och flexibla menyer","badge":"Bäst totalt","score":"4.8","price":"från 799 kr/mån","pros":["Ekologiska alternativ","Flexibla leveransdagar","Inspirerande recept"]},{"name":"Middagsfrid","url":"https://www.middagsfrid.se","description":"Klimatsmarta måltider för hela familjen","badge":null,"score":"4.7","price":"från 749 kr/mån","pros":["Miljövänliga förpackningar","Snabba rätter","Familjevänliga alternativ"]},{"name":"MatHem","url":"https://www.mathem.se","description":"Stort utbud och snabb leverans","badge":null,"score":"4.6","price":"från 699 kr/mån","pros":["Brett sortiment","Snabba leveranser","Enkel beställning"]},{"name":"Simple Feast","url":"https://www.simplefeast.com/se","description":"Vegetariska och veganska menyer","badge":null,"score":"4.5","price":"från 849 kr/mån","pros":["Hållbara ingredienser","Innovativa smaker","Miljövänlig leverans"]},{"name":"HelloFresh","url":"https://www.hellofresh.se","description":"Anpassningsbara menyer och fräscha råvaror","badge":null,"score":"4.6","price":"från 699 kr/mån","pros":["Flexibla menyer","Färska ingredienser","Enkla recept"]},{"name":"Årstiderna","url":"https://www.arstiderna.com","description":"Ekologiska råvaror och säsongsbetonade rätter","badge":null,"score":"4.7","price":"från 799 kr/mån","pros":["Ekologiska produkter","Säsongsanpassade menyer","Miljövänlig profil"]},{"name":"Matkomfort","url":"https://www.matkomfort.se","description":"Färdiglagade måltider för enkelhet","badge":null,"score":"4.5","price":"från 749 kr/mån","pros":["Tidsbesparande","Hög kvalitet","Variation i menyer"]}];
   var items = fallback.slice();
 
   return {
@@ -54,16 +54,16 @@ export default function Home({ providers, year, month, updated }) {
 
   const TRACK_BASE = 'https://axiom-engine-production-54c3.up.railway.app/r';
   const SITE_SLUG = 'matkassepriset';
-  const AffBtn = ({ url, name, primary }) => {
+  const AffBtn = ({ url, name, primary, network }) => {
     var href = TRACK_BASE && TRACK_BASE.startsWith('http')
-      ? TRACK_BASE + '?p=' + encodeURIComponent(name) + '&url=' + encodeURIComponent(url) + '&site=' + SITE_SLUG
+      ? TRACK_BASE + '?p=' + encodeURIComponent(name) + '&url=' + encodeURIComponent(url) + '&site=' + SITE_SLUG + (network && network !== 'adtraction' ? '&network=' + encodeURIComponent(network) : '')
       : url;
     return (
       <a href={href} target="_blank" rel="noopener noreferrer sponsored"
         style={{ display:'inline-block', background: primary ? pc : '#0f172a', color:'#fff',
           padding:'11px 22px', borderRadius:9, fontWeight:700, fontSize:14,
           textDecoration:'none', whiteSpace:'nowrap', transition:'opacity .15s' }}>
-        Välj {name} →
+        {network === 'amazon' ? 'Köp på Amazon →' : 'Välj ' + name + ' →'}
       </a>
     );
   };
@@ -82,23 +82,23 @@ export default function Home({ providers, year, month, updated }) {
   return (
     <>
       <Head>
-        <title>Bästa matkassar för sommaren 2026</title>
-        <meta name="description" content="Upptäck de bästa matkassarna ✓ Uppdaterad 2026 ✓ För en smidig och god sommar med varierade rätter." />
+        <title>Bästa matkasse för sommaren 2026 - Jämförelse</title>
+        <meta name="description" content="Upptäck 2026:s bästa matkassar för sommaren ✓ Enkel guide ✓ Leverantörer: Linas, HelloFresh m.fl. ✓ Uppdaterad 2026" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://matkassepriset.vercel.app" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Bästa matkassar för sommaren 2026" />
-        <meta property="og:description" content="Upptäck de bästa matkassarna ✓ Uppdaterad 2026 ✓ För en smidig och god sommar med varierade rätter." />
+        <meta property="og:title" content="Bästa matkasse för sommaren 2026 - Jämförelse" />
+        <meta property="og:description" content="Upptäck 2026:s bästa matkassar för sommaren ✓ Enkel guide ✓ Leverantörer: Linas, HelloFresh m.fl. ✓ Uppdaterad 2026" />
         <meta property="og:url" content="https://matkassepriset.vercel.app" />
         <meta property="og:locale" content="sv_SE" />
         <meta property="og:site_name" content="Matkassepriset" />
-        <meta property="og:image" content="https://matkassepriset.vercel.app/api/og?title=B%C3%A4sta%20matkassar%20f%C3%B6r%20sommaren%202026&niche=matkasse" />
+        <meta property="og:image" content="https://matkassepriset.vercel.app/api/og?title=B%C3%A4sta%20matkasse%20f%C3%B6r%20sommaren%202026%20-%20J%C3%A4mf%C3%B6relse&niche=matkasse" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Bästa matkassar för sommaren 2026" />
-        <meta name="twitter:description" content="Upptäck de bästa matkassarna ✓ Uppdaterad 2026 ✓ För en smidig och god sommar med varierade rätter." />
-        <meta name="twitter:image" content="https://matkassepriset.vercel.app/api/og?title=B%C3%A4sta%20matkassar%20f%C3%B6r%20sommaren%202026&niche=matkasse" />
+        <meta name="twitter:title" content="Bästa matkasse för sommaren 2026 - Jämförelse" />
+        <meta name="twitter:description" content="Upptäck 2026:s bästa matkassar för sommaren ✓ Enkel guide ✓ Leverantörer: Linas, HelloFresh m.fl. ✓ Uppdaterad 2026" />
+        <meta name="twitter:image" content="https://matkassepriset.vercel.app/api/og?title=B%C3%A4sta%20matkasse%20f%C3%B6r%20sommaren%202026%20-%20J%C3%A4mf%C3%B6relse&niche=matkasse" />
         <link rel="alternate" hreflang="sv" href="https://matkassepriset.vercel.app" />
         <link rel="alternate" hreflang="x-default" href="https://matkassepriset.vercel.app" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -144,11 +144,11 @@ export default function Home({ providers, year, month, updated }) {
             </div>
             <h1 style={{ fontSize:'clamp(26px,4vw,46px)', fontWeight:800,
               lineHeight:1.14, marginBottom:18, color:'#0f172a' }}>
-              Bästa matkasse sommaren 2026
+              Bästa matkasse för sommaren 2026
             </h1>
             <p style={{ fontSize:18, color:'#475569', lineHeight:1.72,
               marginBottom:32, maxWidth:540 }}>
-              Upptäck de bästa matkassarna för en smidig och god sommar.
+              Upptäck de bästa matkassarna för en enkel och god sommar.
             </p>
             <a href="#jamfor" style={{ display:'inline-block', background:pc, color:'#fff',
               padding:'14px 32px', borderRadius:10, fontWeight:700, fontSize:16,
@@ -167,7 +167,7 @@ export default function Home({ providers, year, month, updated }) {
         padding:'16px 20px', fontFamily:'Inter,sans-serif' }}>
         <div style={{ maxWidth:960, margin:'0 auto', display:'flex',
           gap:32, flexWrap:'wrap', justifyContent:'center', alignItems:'center' }}>
-          <div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#d97706',fontWeight:800,flexShrink:0}}>✓</span><span>Sparar tid</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#d97706',fontWeight:800,flexShrink:0}}>✓</span><span>Varierade rätter</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#d97706',fontWeight:800,flexShrink:0}}>✓</span><span>Enkel beställning</span></div>
+          <div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#d97706',fontWeight:800,flexShrink:0}}>✓</span><span>Spara tid i vardagen</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#d97706',fontWeight:800,flexShrink:0}}>✓</span><span>Njut av varierad kost</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#d97706',fontWeight:800,flexShrink:0}}>✓</span><span>Leverans direkt till dörren</span></div>
         </div>
       </div>
 
@@ -175,7 +175,7 @@ export default function Home({ providers, year, month, updated }) {
         margin:'0 auto', fontFamily:'Inter,sans-serif' }}>
         <div style={{ textAlign:'center', marginBottom:36 }}>
           <h2 style={{ fontSize:30, fontWeight:800, marginBottom:10, color:'#0f172a' }}>
-            Jämförelse av matkassar
+            Matkasse jämförelse 2026
           </h2>
           <p style={{ color:'#64748b', fontSize:15 }}>
             Vi har granskat {providers.length} alternativ &mdash; senast uppdaterat {updated}
@@ -202,6 +202,11 @@ export default function Home({ providers, year, month, updated }) {
                 <div style={{ width:44, height:44, borderRadius:12, background: i===0 ? pcLight : '#f8fafc', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:800, fontSize:16, color: i===0 ? pc : '#64748b', flexShrink:0, border:'1px solid '+(i===0 ? pcMed : '#e2e8f0') }}>
                   {['1','2','3','4','5'][i] || (i+1)}
                 </div>
+                {p.image && (
+                  <div style={{ width:72, height:72, flexShrink:0, borderRadius:10, background:'#f8fafc', border:'1px solid #e2e8f0', display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden' }}>
+                    <img src={p.image} alt={p.name} style={{ maxWidth:68, maxHeight:68, objectFit:'contain' }} onError={function(e){e.target.style.display='none';}} />
+                  </div>
+                )}
                 <div style={{ flex:1, minWidth:200 }}>
                   <div style={{ fontWeight:800, fontSize:18, color:'#0f172a', marginBottom:3 }}>{p.name}</div>
                   <div style={{ fontSize:13, color:'#64748b', marginBottom:10 }}>{p.description}</div>
@@ -211,7 +216,7 @@ export default function Home({ providers, year, month, updated }) {
                   <div style={{ fontSize:22, fontWeight:800, color:pc }}>{p.currentPrice || p.price}</div>
                   <Stars score={p.score} />
                   <div style={{ background:'#f0fdf4', color:'#15803d', fontSize:11, fontWeight:700, padding:'3px 10px', borderRadius:8 }}>{p.badge}</div>
-                  <AffBtn url={p.url} name={p.name} primary={i===0} />
+                  <AffBtn url={p.url} name={p.name} primary={i===0} network={p.network} />
                   <button onClick={() => toggleSelect(p.name)} style={{ padding:'7px 14px', borderRadius:8, fontSize:12, fontWeight:600, cursor: selected.includes(p.name) || selected.length < 3 ? 'pointer' : 'not-allowed', fontFamily:'Inter,sans-serif', border:'1px solid', borderColor: selected.includes(p.name) ? pc : '#e2e8f0', background: selected.includes(p.name) ? pcLight : '#fff', color: selected.includes(p.name) ? pc : '#64748b', opacity: !selected.includes(p.name) && selected.length >= 3 ? 0.4 : 1 }}>
                     {selected.includes(p.name) ? '✓ Vald' : '+ Jämför'}
                   </button>
@@ -321,7 +326,7 @@ export default function Home({ providers, year, month, updated }) {
                       </div>
                     )}
                     <div style={{ marginTop:'auto', paddingTop:10 }}>
-                      <AffBtn url={p.url} name={p.name} primary={true} />
+                      <AffBtn url={p.url} name={p.name} primary={true} network={p.network} />
                     </div>
                   </div>
                 );})}
@@ -349,14 +354,14 @@ export default function Home({ providers, year, month, updated }) {
             Så väljer du
           </h2>
           <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>
-            Att välja rätt matkasse kan verka överväldigande med så många alternativ på marknaden. Först och främst bör du tänka på dina kostbehov och preferenser. Om du föredrar ekologiska råvaror kan Årstiderna vara ett bra val, medan HelloFresh erbjuder snabblagade alternativ för den som har ont om tid. Tänk också på hur många portioner du behöver varje vecka; vissa leverantörer har flexibla prenumerationer som kan anpassas efter din familjs storlek. Om du söker ett budgetvänligt alternativ kan City Gross Matkasse vara värt att överväga. Genom att tänka igenom dessa faktorer kan du enkelt hitta en matkasse som passar dina behov och gör din matlagning både enkel och rolig. Dessutom erbjuder många leverantörer smidiga appar och hemsidor där du kan hantera dina beställningar och få inspiration till nya rätter.
+            Att välja rätt matkasse kan kännas överväldigande, men med några enkla steg kan du hitta den perfekta lösningen för dina behov. Börja med att fundera över vad som är viktigt för dig och din familj. Vill du ha ekologiska och närproducerade ingredienser, eller är snabbhet och enkelhet viktigare? Många matkassar erbjuder olika teman och inriktningar, såsom vegetariskt, familjevänligt eller gourmet. När du har en klar bild av dina preferenser, jämför de olika leverantörerna och deras utbud. Titta på recensioner och betyg från andra kunder för att få en uppfattning om kvalitet och service. Slutligen, överväg priset och se till att matkassen passar din budget. Genom att ta hänsyn till dessa faktorer kan du enkelt hitta en matkasse som gör din sommar både enklare och godare.
           </p>
           <h3 style={{ fontSize:22, fontWeight:700, marginBottom:16, color:'#0f172a', marginTop:40 }}>Vanliga misstag</h3>
-          <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>Ett vanligt misstag när man väljer matkasse är att inte läsa igenom leverantörens meny och villkor ordentligt. Det kan leda till att du får hem rätter som inte passar din smak eller kosthållning. Ett annat misstag är att inte prova olika leverantörer och fastna vid den första du provat, vilket kan göra att du missar bättre alternativ. Slutligen, glöm inte att planera dina måltider utifrån matkassens innehåll för att minimera matsvinn och maximera smakupplevelsen.</p>
+          <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>När du väljer matkasse är det lätt att göra några vanliga misstag. Ett av de vanligaste är att inte läsa igenom hela innehållslistan, vilket kan leda till att du får ingredienser som du eller din familj inte gillar. Ett annat misstag är att inte ta hänsyn till leveranstider och -dagar, vilket kan skapa problem om du har en hektisk vardag. Många glömmer också att jämföra priser och missar därmed att få den bästa dealen. Slutligen, se till att välja en leverantör som erbjuder flexibilitet om dina planer ändras, så att du enkelt kan justera eller pausa ditt abonnemang vid behov.</p>
           <h3 style={{ fontSize:20, fontWeight:700, marginBottom:24, color:'#0f172a' }}>
             Vad ska du tänka på?
           </h3>
-          <div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#d9770615',color:'#d97706',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>1</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Läs menyn noga</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#d9770615',color:'#d97706',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>2</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Jämför flera leverantörer</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#d9770615',color:'#d97706',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>3</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Planera dina måltider</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#d9770615',color:'#d97706',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>4</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Använd erbjudanden</p></div>
+          <div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#d9770615',color:'#d97706',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>1</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Läs innehållslistan noggrant</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#d9770615',color:'#d97706',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>2</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Kolla leveranstider</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#d9770615',color:'#d97706',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>3</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Jämför priser och erbjudanden</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#d9770615',color:'#d97706',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>4</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Välj en flexibel leverantör</p></div>
         </div>
       </section>
 
@@ -365,7 +370,7 @@ export default function Home({ providers, year, month, updated }) {
         <h2 style={{ fontSize:26, fontWeight:800, marginBottom:32, color:'#0f172a' }}>
           Vanliga frågor
         </h2>
-        <details style={{borderBottom:'1px solid #e2e8f0',paddingBottom:16,marginBottom:16}} open={false}><summary style={{fontWeight:700,fontSize:15,cursor:'pointer',color:'#0f172a',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>Vilken matkasse är bäst för barnfamiljer?<span style={{color:'#d97706',fontSize:18,fontWeight:400}}>+</span></summary><p style={{marginTop:12,color:'#475569',lineHeight:1.75,fontSize:14}}>Linas Matkasse och City Gross Matkasse erbjuder familjevänliga alternativ med rätter som ofta uppskattas av barn. De har också flexibla prenumerationsplaner som kan anpassas efter familjens behov.</p></details>
+        <details style={{borderBottom:'1px solid #e2e8f0',paddingBottom:16,marginBottom:16}} open={false}><summary style={{fontWeight:700,fontSize:15,cursor:'pointer',color:'#0f172a',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>Vilken är den bästa matkassen för sommaren 2026?<span style={{color:'#d97706',fontSize:18,fontWeight:400}}>+</span></summary><p style={{marginTop:12,color:'#475569',lineHeight:1.75,fontSize:14}}>Den bästa matkassen för sommaren 2026 beror på dina specifika behov och preferenser. Jämför olika leverantörer som Linas Matkasse och HelloFresh för att hitta den som passar dig bäst.</p></details>
       </section>
 
       <section style={{ background:'#f8fafc', borderTop:'1px solid #e2e8f0', padding:'32px 20px', fontFamily:'Inter,sans-serif' }}>
@@ -413,9 +418,9 @@ export default function Home({ providers, year, month, updated }) {
               <div style={{ fontWeight:700, color:'#e2e8f0', marginBottom:14, fontSize:12, textTransform:'uppercase', letterSpacing:'0.5px' }}>Jämförelser</div>
               <div style={{ display:'flex', flexDirection:'column', gap:10, fontSize:14 }}>
                 <Link href="/jamfor/linas-matkasse-vs-middagsfrid" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Linas Matkasse vs Middagsfrid</Link>
-                <Link href="/jamfor/linas-matkasse-vs-hellofresh" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Linas Matkasse vs HelloFresh</Link>
+                <Link href="/jamfor/linas-matkasse-vs-mathem" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Linas Matkasse vs MatHem</Link>
                 <Link href="/jamfor/linas-matkasse-vs-simple-feast" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Linas Matkasse vs Simple Feast</Link>
-                <Link href="/jamfor/linas-matkasse-vs-mathem-matkasse" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Linas Matkasse vs MatHem Matkasse</Link>
+                <Link href="/jamfor/linas-matkasse-vs-hellofresh" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Linas Matkasse vs HelloFresh</Link>
                 <Link href="/jamfor/linas-matkasse-vs-arstiderna" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Linas Matkasse vs Årstiderna</Link>
               </div>
             </div>
